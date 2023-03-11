@@ -38,7 +38,7 @@ def lengthOfLongestSubstring(s: str) -> int:
     for i in range(len(s)):
 
         s_temp = s[i]
-        j = 1
+        j = 1   
 
         while i + j < len(s) and s[i + j] not in s_temp:
             s_temp += s[i + j]
@@ -51,11 +51,11 @@ def lengthOfLongestSubstring(s: str) -> int:
 
 # %%
 s = "abcabcbb"
-s = "bbbbb"
-s = "pwwkew"
+# s = "bbbbb"
+# s = "pwwkew"
 
-s = "au"
-s = " "
+# s = "au"
+# s = " "
 
 
 print(lengthOfLongestSubstring(s))
