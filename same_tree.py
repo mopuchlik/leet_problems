@@ -19,9 +19,10 @@ Output: false
 @author: User
 """
 
+
 # for a list but they have a class for this, see below
 def same_tree(p, q):
-    
+
     if len(p) != len(q):
         return False
     else:
@@ -29,12 +30,14 @@ def same_tree(p, q):
         for i in range(len(p)):
             if p[i] == q[i]:
                 continue
-            else: return False 
-                
+            else:
+                return False
+
     return result
 
-p = [1,2,1]
-q = [1,1,2]
+
+p = [1, 2, 1]
+q = [1, 1, 2]
 
 print(same_tree(p, q))
 
@@ -46,16 +49,16 @@ print(same_tree(p, q))
 #         self.right = right
 
 
-# class Solution:
-#     def isSameTree(self, p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        
-#         if p == None and q == None: return True
-#         if p == None or q == None: return False
-        
-#         result = p.val == q.val and self.isSameTree(p.right, q.right) and self.isSameTree(p.left, q.left)
- 
-#         return result
+def isSameTree(self, p, q):
+    """
+    :type p: TreeNode
+    :type q: TreeNode
+    :rtype: bool
+    """
 
+    if not p and not q:
+        return True
+    if not q or not p or q.val != p.val:
+        return False
 
-
-
+    return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
