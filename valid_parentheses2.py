@@ -27,7 +27,7 @@
 
 def isValid(s):
 
-    for i in range(len(s) - 1):
+    while True:
         for i in range(len(s) - 1):
             if (
                 (s[i] == "(" and s[i + 1] == ")")
@@ -37,12 +37,11 @@ def isValid(s):
                 s = "".join(
                     [char for j, char in enumerate(s) if (j != i) and (j != (i + 1))]
                 )
-            break
-    if len(s) == 0:
-        flag_valid = True
-    else:
-        flag_valid = False
-    return flag_valid
+                if len(s) == 0:
+                    return True
+                break
+            else:
+                return False
 
 
 # %%
