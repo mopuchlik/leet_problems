@@ -16,7 +16,7 @@ def count_substring(string, sub_string):
     n_substr = len(sub_string)
     # n_str = len(sub)
 
-    for i, _ in enumerate(string):
+    for i in range(len(string) - n_substr + 1):
         if string[i : i + n_substr] == sub_string:
             count += 1
 
